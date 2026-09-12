@@ -1,0 +1,23 @@
+load_value 4
+load_value 2
+load_value 3
+bin_op *
+bin_op +
+store_name x
+load_name x
+load_value 5
+bin_op >
+jump_if_false _l1
+load_name x
+load_value 2
+bin_op -
+store_name x
+jump_label _l2
+_l1:
+load_name x
+load_value 2
+bin_op +
+store_name x
+jump_label _l2
+_l2:
+return_value

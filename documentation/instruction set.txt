@@ -1,0 +1,30 @@
+[ Current Instruction Set ]
+nop - No operation (does nothing)
+load_value <value> - Loads <value> onto the stack
+load_literal <int16> - Loads <int16> onto the stack
+load_label <label> - Loads location of <label> onto the stack
+load_name <name> - Loads value of <name> onto the stack
+store_name <name> - Pops top value off stack and stores it in <name>
+pop_top - Pops top value off stack
+call <arg_count> - Pops <arg_count> arguments and a location (to jump to)
+bin_op <operation> - Pops top two values off stack, performs operation <operation>, and pushes result onto stack
+jump_label <label> - Jumps to location of <label>
+jump_if_false <label> - Pop top value off stack and jumps to location of <label> if its false
+jump_if_true <label> - Pop top value off stack and jumps to location of <label> if its true
+return_value - Returns from call with return value (exits if ran outside of calls)
+return_const <constant> - Pushes <constant> onto stack and returns from call (exits if ran outside of calls)
+
+[ Opcodes ]
+nop - 1C
+load_value - 20
+load_literal - 2A
+load_name - 30
+store_name - 3F
+pop_top - 40
+call - 4A
+bin_op - 50
+jump_label - 60
+jump_if_false - 6A
+jump_if_true - 6F
+return_value - 70
+return_const - 77
