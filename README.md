@@ -13,7 +13,10 @@ python3 src/main.py tests/test2
 ```
 
 ## Changelog
-v1.0.0:
+### v1.1.0:
+- Add the 5 new instructions
+
+### v1.0.0:
 - Release
 
 ## Other Things
