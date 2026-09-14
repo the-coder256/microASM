@@ -1,0 +1,28 @@
+; sum = 0
+; for i = 0, i < 10, i++ {
+;     sum += i
+; }
+load_value 0
+store_name sum
+load_value 0
+store_name i
+
+_l1:
+load_name i
+load_value 10
+bin_op <
+jump_if_false _l2
+
+load_name sum
+load_name i
+bin_op +
+store_name sum
+
+load_name i
+load_value 1
+bin_op +
+store_name i
+
+_l2:
+load_name sum
+return_value

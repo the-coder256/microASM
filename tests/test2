@@ -1,0 +1,15 @@
+; function crap here
+load_label _add
+store_name add
+load_name add
+load_value 2
+load_value 3
+call 2
+return_value
+_add:
+store_name y
+store_name x
+load_name x
+load_name y
+bin_op +
+return_value
