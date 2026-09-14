@@ -21,10 +21,12 @@ instructions:list[str] = [
     "nop", "load_value", "load_literal",
     "load_name", "load_label",
     "store_name", "pop_top",
-    "call", "bin_op",
+    "call", "bin_op"
     "jump_label", "jump_if_false",
     "jump_if_true", "return_value",
-    "return_const"
+    "return_const", "delete_name",
+    "bin_index", "make_list",
+    "make_tuple", "make_dict"
 ]
 
 class Tokeniser:

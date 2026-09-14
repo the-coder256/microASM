@@ -105,6 +105,9 @@ class Generator:
                 self.append(0x2a)
                 self.empty_addresses.append((self.bp, node.argument))
                 self.generate_number(0)
+            elif instruction == "delete_name":
+                self.append(0x3a)
+                self.generate_from_expr(node.argument)
             elif instruction == "store_name":
                 self.append(0x3f)
                 self.generate_from_expr(node.argument)
@@ -116,6 +119,8 @@ class Generator:
             elif instruction == "bin_op":
                 self.append(0x50)
                 self.generate_from_op(node.argument)
+            elif instruction == "bin_index":
+                self.append(0x5a)
             elif instruction == "jump_label":
                 self.append(0x60)
                 self.empty_addresses.append((self.bp, node.argument))
@@ -133,6 +138,15 @@ class Generator:
             elif instruction == "return_const":
                 self.append(0x77)
                 self.generate_from_expr(node.argument)
+            elif instruction == "make_list":
+                self.append(0x80)
+                self.generate_number(node.argument)
+            elif instruction == "make_tuple":
+                self.append(0x8a)
+                self.generate_number(node.argument)
+            elif instruction == "make_dict":
+                self.append(0x8f)
+                self.generate_number(node.argument)
         elif type(node) == parser.Label:
             self.labels.update({node.name: self.bp})
 

@@ -1,0 +1,41 @@
+; dedicated file for testing sequences (introduced in 1.2.0)
+; list
+load_value 2
+load_value 3
+load_value 5
+make_list 3
+store_name l
+
+; tuple
+load_value 4
+load_value 2
+load_value 1
+make_tuple 3
+store_name t
+
+; dictionary
+load_value "apple"
+load_value 10
+load_value "banana"
+load_value 20
+load_value "pear"
+load_value 15
+make_dict 6
+store_name d
+
+; put the sequences on the stack
+load_name l
+load_name t
+load_name d
+
+; indexing
+load_name l
+load_value 1
+bin_index    ; should be 3
+
+load_name t
+load_value 0
+bin_index    ; should be 4
+
+; exit
+return_value
