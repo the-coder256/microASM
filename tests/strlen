@@ -1,0 +1,31 @@
+load_label _strlen
+store_name strlen
+
+load_name strlen
+load_value "Hello"
+call 1
+
+return_value
+
+_strlen:
+store_name str
+load_value 0
+store_name i
+
+_l1:
+load_name str
+load_name i
+bin_index
+store_name c
+load_name c
+jump_if_false _l2
+
+load_name i
+load_value 1
+bin_op +
+store_name i
+jump_label _l1
+
+_l2:
+load_name i
+return_value
