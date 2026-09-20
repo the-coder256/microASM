@@ -13,6 +13,9 @@ python3 src/main.py tests/test2
 ```
 
 ## Changelog
+### v1.2.1:
+- Add escaping
+
 ### v1.2.0:
 - Add base input/output instructions
 
