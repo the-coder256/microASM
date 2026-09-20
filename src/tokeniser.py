@@ -72,6 +72,7 @@ class Tokeniser:
         in_string = 0
         string_char = ""
         in_comment = 0
+        escaping = 0
         for index in range(len(content)):
             char = content[index]
             if char == "\n":
@@ -87,6 +88,18 @@ class Tokeniser:
                 string_char = char
             elif char == string_char and in_string:
                 in_string = 0
+            elif char == "\\":
+                escaping = 1
+            elif escaping:
+                if char == "n":
+                    self.curr_tok += "\n"
+                elif char == "t":
+                    self.curr_tok += "\t"
+                elif char == "\\":
+                    self.curr_tok += "\\"
+                else:
+                    self.curr_tok += char
+                escaping = 0
             elif in_string:
                 self.curr_tok += char
             elif char == " ":
