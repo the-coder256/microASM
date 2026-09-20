@@ -18,6 +18,8 @@ return_const <constant> - Pushes <constant> onto stack and returns from call (ex
 make_list <item_count> - Pops <item_count> values and constructs a mutable sequence (list) with them
 make_tuple <item_count> - Pops <item_count> values and constructs a immutable sequence (tuple) with them
 make_dict <item_count> - Pops <item_count> values and constructs a mutable key-value sequence (dict) with them
+print_value - Pops top value off stack and prints it
+accept_input - Pushes given input onto the stack
 
 [ Opcodes ]
 nop - 1C
@@ -38,3 +40,5 @@ return_const - 77
 make_list - 80
 make_tuple - 8A
 make_dict - 8F
+print_value - 90
+accept_input - 9A

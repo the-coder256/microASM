@@ -147,6 +147,10 @@ class Generator:
             elif instruction == "make_dict":
                 self.append(0x8f)
                 self.generate_number(node.argument)
+            elif instruction == "print_value":
+                self.append(0x90)
+            elif instruction == "accept_input":
+                self.append(0x9a)
         elif type(node) == parser.Label:
             self.labels.update({node.name: self.bp})
 

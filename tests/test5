@@ -1,0 +1,7 @@
+; testing io instructions introduced in v1.3.0
+load_value "cat program"
+print_value
+accept_input
+print_value
+
+return_value

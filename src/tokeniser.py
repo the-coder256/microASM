@@ -26,7 +26,8 @@ instructions:list[str] = [
     "jump_if_true", "return_value",
     "return_const", "delete_name",
     "bin_index", "make_list",
-    "make_tuple", "make_dict"
+    "make_tuple", "make_dict",
+    "print_value", "accept_input"
 ]
 
 class Tokeniser:
