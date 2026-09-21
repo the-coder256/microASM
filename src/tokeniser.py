@@ -82,13 +82,7 @@ class Tokeniser:
                 in_comment = 1
             elif in_comment:
                 continue
-            elif char in ["'", '"'] and not in_string:
-                self.curr_tok += char
-                in_string = 1
-                string_char = char
-            elif char == string_char and in_string:
-                in_string = 0
-            elif char == "\\":
+            elif char == "\\" and not escaping:
                 escaping = 1
             elif escaping:
                 if char == "n":
@@ -100,6 +94,12 @@ class Tokeniser:
                 else:
                     self.curr_tok += char
                 escaping = 0
+            elif char in ["'", '"'] and not in_string:
+                self.curr_tok += char
+                in_string = 1
+                string_char = char
+            elif char == string_char and in_string:
+                in_string = 0
             elif in_string:
                 self.curr_tok += char
             elif char == " ":

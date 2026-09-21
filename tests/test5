@@ -1,5 +1,5 @@
 ; testing io instructions introduced in v1.3.0
-load_value "cat program"
+load_value "cat program\n"
 print_value
 accept_input
 print_value
